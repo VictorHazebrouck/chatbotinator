@@ -19,7 +19,7 @@ services:
             dockerfile: ./docker/client-web.Dockerfile
         container_name: my-client-web
         ports:
-            - "3001:3201"
+            - "3201:3001"
         restart: unless-stopped
         depends_on:
             - postgres
@@ -31,7 +31,7 @@ services:
             dockerfile: ./docker/backend.Dockerfile
         container_name: my-backend
         ports:
-            - "3000:3200"
+            - "3200:3000"
         restart: unless-stopped
         depends_on:
             - postgres
