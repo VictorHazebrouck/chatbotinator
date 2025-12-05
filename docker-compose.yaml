@@ -2,7 +2,6 @@ name: surveysinator
 services:
     postgres:
         build:
-            context: ../
             dockerfile: ./docker/postgres.Dockerfile
         container_name: my-postgres-local
         environment:
@@ -24,6 +23,8 @@ services:
         restart: unless-stopped
         depends_on:
             - postgres
+        env_file:
+            - .env
 
     backend:
         build:
@@ -34,5 +35,7 @@ services:
         restart: unless-stopped
         depends_on:
             - postgres
+        env_file:
+            - .env
 volumes:
     pgdata:
