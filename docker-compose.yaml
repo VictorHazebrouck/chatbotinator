@@ -16,6 +16,16 @@ services:
 
     client-web:
         build:
+            args:
+                BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+                NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL}
+                POSTGRES_DB: ${POSTGRES_DB}
+                POSTGRES_HOST: ${POSTGRES_HOST}
+                POSTGRES_PORT: ${POSTGRES_PORT}
+                POSTGRES_USER: ${POSTGRES_USER}
+                POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+                CLIENT_WEB_DOMAIN: ${CLIENT_WEB_DOMAIN}
+                GEMINI_API_KEY: ${GEMINI_API_KEY}
             dockerfile: ./docker/client-web.Dockerfile
         container_name: my-client-web
         ports:
@@ -23,11 +33,29 @@ services:
         restart: unless-stopped
         depends_on:
             - postgres
-        env_file:
-            - .env
+        environment:
+            BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+            NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL}
+            POSTGRES_DB: ${POSTGRES_DB}
+            POSTGRES_HOST: ${POSTGRES_HOST}
+            POSTGRES_PORT: ${POSTGRES_PORT}
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            CLIENT_WEB_DOMAIN: ${CLIENT_WEB_DOMAIN}
+            GEMINI_API_KEY: ${GEMINI_API_KEY}
 
     backend:
         build:
+            args:
+                BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+                NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL}
+                POSTGRES_DB: ${POSTGRES_DB}
+                POSTGRES_HOST: ${POSTGRES_HOST}
+                POSTGRES_PORT: ${POSTGRES_PORT}
+                POSTGRES_USER: ${POSTGRES_USER}
+                POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+                CLIENT_WEB_DOMAIN: ${CLIENT_WEB_DOMAIN}
+                GEMINI_API_KEY: ${GEMINI_API_KEY}
             dockerfile: ./docker/backend.Dockerfile
         container_name: my-backend
         ports:
@@ -35,7 +63,15 @@ services:
         restart: unless-stopped
         depends_on:
             - postgres
-        env_file:
-            - .env
+        environment:
+            BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+            NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL}
+            POSTGRES_DB: ${POSTGRES_DB}
+            POSTGRES_HOST: ${POSTGRES_HOST}
+            POSTGRES_PORT: ${POSTGRES_PORT}
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            CLIENT_WEB_DOMAIN: ${CLIENT_WEB_DOMAIN}
+            GEMINI_API_KEY: ${GEMINI_API_KEY}
 volumes:
     pgdata:
