@@ -1,0 +1,26 @@
+@import "@repo/config-tailwind";
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+.markdown {
+	* {
+		color: var(--color-fg-base);
+	}
+	strong {
+		color: var(--color-fg-base);
+	}
+
+	pre {
+		background-color: var(--color-bg-light);
+	}
+}
+
+.scrollbar-hide {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+}

@@ -1,0 +1,21 @@
+{
+	"name": "@repo/db",
+	"version": "0.0.0",
+	"type": "module",
+	"exports": {
+		".": "./src/db.ts",
+		"./types": "./src/types.ts"
+	},
+	"license": "MIT",
+	"scripts": {
+		"migrate": "bun --env-file='../../.env' ./src/scripts/migrate.ts",
+		"seed": "bun --env-file='../../.env' ./src/scripts/seed.ts"
+	},
+	"devDependencies": {
+		"@repo/config-typescript": "*"
+	},
+	"dependencies": {
+		"kysely": "^0.28.8",
+		"kysely-postgres-js": "^3.0.0"
+	}
+}

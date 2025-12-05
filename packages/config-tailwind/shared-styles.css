@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+	button:focus,
+	input:focus,
+	select:focus,
+	textarea:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+@theme {
+	--color-bg-dark: #191c1b;
+	--color-bg-base: #2a2a2a;
+	--color-bg-light: #3f3a36;
+
+	--color-fg-base: #ebdbb2;
+	--color-fg-dark: #bdae93;
+	--color-fg-darker: #a89984;
+
+	--color-borderc: #665c54;
+	--radius-radius: 4px;
+}

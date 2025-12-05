@@ -1,0 +1,50 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+	content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+	presets: [require("nativewind/preset")],
+	theme: {
+		extend: {
+			colors: {
+				// from https://www.penguinui.com modern theme
+
+				/* light theme */
+				"color-surface": "#ffffff",
+				"color-surface-alt": "#fafafa",
+				"color-on-surface": "#525252",
+				"color-on-surface-strong": "#171717",
+				"color-primary": "#000000",
+				"color-on-primary": "#f5f5f5",
+				"color-secondary": "#262626",
+				"color-on-secondary": "#ffffff",
+				"color-outline": "#d4d4d4",
+				"color-outline-strong": "#262626",
+
+				/* dark theme */
+				"color-surface-dark": "#0a0a0a",
+				"color-surface-dark-alt": "#171717",
+				"color-on-surface-dark": "#d4d4d4",
+				"color-on-surface-dark-strong": "#ffffff",
+				"color-primary-dark": "#ffffff",
+				"color-on-primary-dark": "#000000",
+				"color-secondary-dark": "#d4d4d4",
+				"color-on-secondary-dark": "#000000",
+				"color-outline-dark": "#404040",
+				"color-outline-dark-strong": "#d4d4d4",
+
+				/* shared colors */
+				"color-info": "#0ea5e9",
+				"color-on-info": "#ffffff",
+				"color-success": "#22c55e",
+				"color-on-success": "#ffffff",
+				"color-warning": "#f59e0b",
+				"color-on-warning": "#ffffff",
+				"color-danger": "#ef4444",
+				"color-on-danger": "#ffffff",
+			},
+			borderRadius: {
+				"radius-radius": "2px",
+			},
+		},
+	},
+	plugins: [],
+};

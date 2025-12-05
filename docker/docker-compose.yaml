@@ -1,0 +1,30 @@
+name: surveysinator
+services:
+    postgres:
+        build:
+            context: ../
+            dockerfile: ./docker/postgres.Dockerfile
+        container_name: my-postgres-local
+        environment:
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: admin
+            POSTGRES_DB: surveysinator
+        ports:
+            - "5432:5432"
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        restart: unless-stopped
+
+    application:
+        build:
+            context: ../
+            dockerfile: ./docker/application.Dockerfile
+        container_name: my-application
+        ports:
+            - "3000:3000"
+            - "3001:3001"
+        restart: unless-stopped
+        depends_on:
+            - postgres
+volumes:
+    pgdata:

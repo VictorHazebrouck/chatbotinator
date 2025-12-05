@@ -1,0 +1,21 @@
+{
+	"name": "@repo/auth",
+	"version": "0.0.0",
+	"exports": {
+		".": "./src/auth.ts",
+		"./types": "./src/types.ts"
+	},
+	"license": "MIT",
+	"scripts": {
+		"migrate": "bun run --env-file='../../.env' node_modules/@better-auth/cli/dist/index.mjs migrate",
+		"seed": "echo 'seeding..'"
+	},
+	"devDependencies": {
+		"@better-auth/cli": "^1.3.34",
+		"@repo/config-typescript": "*"
+	},
+	"dependencies": {
+		"@repo/db": "*",
+		"better-auth": "^1.3.34"
+	}
+}
