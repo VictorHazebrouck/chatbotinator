@@ -8,4 +8,4 @@ WORKDIR /usr/src/app/apps/backend
 
 USER bun
 EXPOSE 3000
-CMD [ "bun", "start" ]
+CMD [ "bun", "dev" ]

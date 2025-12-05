@@ -15,14 +15,22 @@ services:
             - pgdata:/var/lib/postgresql/data
         restart: unless-stopped
 
-    application:
+    client-web:
         build:
-            context: ../
-            dockerfile: ./docker/application.Dockerfile
-        container_name: my-application
+            dockerfile: ./docker/client-web.Dockerfile
+        container_name: my-client-web
+        ports:
+            - "3001:3001"
+        restart: unless-stopped
+        depends_on:
+            - postgres
+
+    backend:
+        build:
+            dockerfile: ./docker/backend.Dockerfile
+        container_name: my-backend
         ports:
             - "3000:3000"
-            - "3001:3001"
         restart: unless-stopped
         depends_on:
             - postgres
